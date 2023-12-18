@@ -24,9 +24,9 @@ jobs:
     - name: Create Docker Build and Upload to ECR 
       run: | 
         aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/n6d1u1n6
-        docker build -t flask-calc-demo .
-        docker tag flask-calc-demo:latest public.ecr.aws/s3c4l2m0/flask-calc-demo:latest
-        docker push public.ecr.aws/s3c4l2m0/flask-calc-demo:latest
+        docker build -t ctl-dockerfile-demo .
+        docker tag ctl-dockerfile-demo:latest public.ecr.aws/n6d1u1n6/ctl-dockerfile-demo:latest
+        docker push public.ecr.aws/n6d1u1n6/ctl-dockerfile-demo:latest
 
     - name: Deploy to ECS
       run: |
